@@ -21,8 +21,15 @@ cyan star in the left-hand panel shows the location of the Milky Way's
 bar, assuming a bar semi-major axis of 5 kpc and a galaxy stellar mass
 of 5 &times; 10<sup>10</sup> solar masses.)
 
-[![DOI](https://zenodo.org/badge/86151029.svg)](https://zenodo.org/badge/latestdoi/86151029)
+<!-- [![DOI](https://zenodo.org/badge/86151029.svg)](https://zenodo.org/badge/latestdoi/86151029) -->
 
+
+## Data
+
+The full set of *Spitzer* 3.6-micron images for the sample galaxies can be found
+at, e.g., the [NASA Extragalactic Database](https://ned.ipac.caltech.edu); to
+make it easier to reproduce the figures in the paper, we include sky-subtracted
+versions of these images for xxx of the galaxies.
 
 
 ## Dependencies
