@@ -9,17 +9,7 @@ submitted).
 
 ![Bar sizes](./barsizes_display.png)
 
-(This figure, combining two plots from the paper, shows the
-(deprojected) size of bars from the local, S4G-based sample studied in
-the paper as a function stellar mass (left) and as a function of
-exponential disk scale length (right). The logarithm of bar size is a
-broken-linear function of the logarithm of stellar mass, and a simple
-linear function of the logarithm of exponential disk scale length (dashed
-red lines in both panels; the dashed blue line in the left panel shows
-the best linear fit). The
-cyan star in the left-hand panel shows the location of the Milky Way's
-bar, assuming a bar semi-major axis of 5 kpc and a galaxy stellar mass
-of 5 &times; 10<sup>10</sup> solar masses.)
+(Describe an interesting figure ...)
 
 <!-- [![DOI](https://zenodo.org/badge/86151029.svg)](https://zenodo.org/badge/latestdoi/86151029) -->
 
@@ -54,15 +44,15 @@ There are two Jupyter Python notebooks:
 ## Python Code
 
    * `datasets.py`, `datautils.py`, `plotutils.py`, `s4gutils.py` -- miscellaneous utility functions
-   (including statistics).
+   (including statistics). **[FIXME]**
    
    * `sample_defs.py` -- definitions of various subsamples of S4G galaxies, in the
-   form of integer lists of index values (slices, more or less).
+   form of integer lists of index values (slices, more or less). **[FIXME]**
    
    * `fitting_barsizes.py` -- code to assist with the fits in the Jupyter notebook
-   `barsize_fits.ipynb`.
+   `barsize_fits.ipynb`. **[FIXME]**
 
-   * `make_fit_tables.py` -- code to generate LaTeX tables for the paper
+   * `make_fit_tables.py` -- code to generate LaTeX tables for the paper **[FIXME]**
 
 
 ## How to Generate Figures and Analyses from the Paper
@@ -76,10 +66,8 @@ which is where saved PDF figures should go. Also make sure to set `savePlots = T
 if you want the PDF files to actually be generated (the default is `False`, which
 means the figures will appear in the notebook but won't be saved to disk).
 
-3. **Optionally:** Run the notebook `barsize_fits.ipynb` to generate and
-save the various fits. (Note that MSE_pred values and parameter
-uncertainties may change slightly, since they are based on bootstrap
-resampling.) This is "optional" in that the output files already exist
+3. **Optionally:** Run the notebook `barprofiles_fits.ipynb` to generate and
+save the various logistic fits. This is "optional" in that the output files already exist
 in this directory (they will be overwritten if the notebook is run).
 
 4. Run the notebook `barprofiles_figures_for_paper.ipynb` to generate the figures
