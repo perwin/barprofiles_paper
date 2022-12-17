@@ -1,0 +1,230 @@
+# List of galaxies in S4G barred-spirals Sample 1 (D < 25 Mpc) from Erwin 2018 
+# S4G-bar-fractions paper, restricted to inclination i = 40--70 and bar deltaPA_dp <= 60;
+# also includes B/P morphological classification for the bars.
+#
+# Valid galaxies are indicated by "[x]" in front of their names; galaxies with dubious or 
+# nonexistent bars, or cases where brights stars, saturation lines, etc. make it 
+# impossible to get good bar profiles are indicated by "[-]" and are *excluded*
+# from the sample.
+#
+# The entry after each galaxy name is classification:
+#    "B/P" = has morphological boxy/peanut-shaped bulge inside bar
+#    "NO" = does *not* have
+# Additional notes are included after the B/P classification.
+#
+[x]ESO013-016  BUCKLING??? (small)
+[x]ESO054-021  NO
+[x]ESO079-005  NO
+[x]ESO085-047  NO -- dubious bar (faint outer disk)
+[x]ESO120-012  NO
+[-]ESO145-025  NO -- no clear bar
+[x]ESO202-041  NO -- dubious bar
+[x]ESO236-039  NO
+[-]ESO245-005  NO -- no bar
+[x]ESO357-012  NO
+[x]ESO358-020  NO -- sl. dubious bar
+[-]ESO358-054  NO -- no bar
+[x]ESO420-009  NO -- bar is tiny (r ~ 7 pixels)
+[-]ESO438-017  NO -- messed up by bright star and saturation lines
+[x]ESO440-044  NO -- "bar" may have same ellipticity as disk
+[x]ESO443-085  NO (?; skinny bar)
+[x]ESO479-004  NO
+[-]ESO480-020  NO -- messed up by bright star and saturation lines
+[-]ESO544-030  NO -- no clear bar
+[-]ESO547-005  NO -- no clear bar
+[-]ESO548-082  NO -- no clear bar
+[x]ESO572-030  NO
+[-]ESO576-059  NO -- not barred
+[-]IC0223      NO (may not be barred)
+#	minor-axis profile is > major-axis profile on one side
+[x]IC0600      NO
+[-]IC0796      NO -- weak bar too close to major axis
+[x]IC0797      NO (may not be barred)
+[x]IC1014      NO
+[-]IC1251      NO -- bar is tiny (r ~ 9 pixels)
+#	profiles are identical on one side
+[-]IC1870      NO -- messed up by bright star and saturation lines
+[x]IC1933      NO -- bar is tiny (r ~ 10 pixels)
+[x]IC1953      NO (poss. very weak offset spurs?)
+[x]IC1954      NO (slightly banana-shaped; ED17)
+[x]IC2007      NO
+[-]IC2828      NO -- bar dubious and unclear
+#	minor-axis profile is > major-axis profile on one side
+#	"bar" may have same ellipticity as disk (offcenter, too-)
+[x]IC3115      NO -- note bright star at end of bar on one side
+[-]IC3476      NO -- no clear bar (blotchy SF)
+[x]IC3517      NO
+[x]IC3521      NO (strongly curve/banana-shaped bar)
+[-]IC3576      NO -- no clear bar
+[-]IC3583      NO -- no clear bar
+[x]IC4901      B/P (corner spurs)
+[-]IC5269C     NO -- probably edge-on with warps?
+[x]IC5273      NO (off-center bar)
+[x]NGC0210     B/P (weird spurs)
+[x]NGC0289     B/P (weak, asymm. spurs); i = 38 from ED17
+[x]NGC0298     NO (small)
+[x]NGC0578     NO (slightly weird)
+[x]NGC0672     NO
+[x]NGC0685     NO (too face-on?)
+[x]NGC0701     NO (smooth, narrow elliptical bar)
+[x]NGC0918     NO (small)
+[x]NGC1051     NO (small)
+[x]NGC1097     B/P (ED17)
+[x]NGC1187     B/P (ED17)
+[x]NGC1255     NO (ED17)
+[x]NGC1326A    NO
+[x]NGC1350     B/P (ED17)
+[x]NGC1367     B/P (ED17 = NGC1371) 
+[x]NGC1436     NO
+[-]NGC1473     NO (bent/banana shape?)
+# major- and minor-axis profiles indistinguishable
+[x]NGC1512     B/P (ED17)
+[-]NGC1556     *EDGE-ON*
+[x]NGC1559     NO (ED17)
+[x]NGC1800     NO?
+[x]NGC1808     B/P (ED17)
+[x]NGC1879     NO
+[-]NGC2552     NO -- not barred
+[x]NGC2903     B/P (ED17)
+[x]NGC2968     B/P
+[-]NGC3104     NO -- not barred
+[x]NGC3185     B/P (ED13)
+[-]NGC3190     (highly inclined, interacting)
+[x]NGC3227     BUCKLING (ED16,ED17)
+[x]NGC3264     NO
+[x]NGC3287     NO
+[x]NGC3319     NO (ED17)
+[x]NGC3359     NO (ED17)
+[x]NGC3447     NO
+[x]NGC3486     NO (ED17)
+[x]NGC3627     B/P (ED17)
+[x]NGC3673     B/P (ED17)
+[x]NGC3684     NO (ED17)
+[x]NGC3726     NO (ED17)
+[x]NGC3729     B/P (ED13)
+[x]NGC3850     NO
+[-]NGC3901     NO (small!)
+#	minor-axis profile is > major-axis profile on one side
+[x]NGC3930     NO (ED17)
+[-]NGC3949     NO (small)
+# major- and minor-axis profiles indistinguishable
+[x]NGC3953     B/P (ED17)
+[x]NGC3992     B/P (ED17)
+[x]NGC4020     NO
+[-]NGC4049     NO -- no clear bar (SF effect?)
+[x]NGC4064     NO (ED17)
+[x]NGC4102     B/P (ED17)
+[x]NGC4116     NO
+[x]NGC4123     B/P (ED17)
+[x]NGC4133     B/P? (small, but probable)
+[x]NGC4145     NO (ED17)
+[-]NGC4151     *FACE-ON*
+[-]NGC4242     NO -- no clear bar (patchy SF?)
+[x]NGC4293     B/P (ED17)
+[x]NGC4294     NO (too highly inclined?)
+[x]NGC4389     NO (SF in bar)
+[-]NGC4393     NO (may not be barred)
+# major- and minor-axis profiles indistinguishable
+[x]NGC4405     NO? (too small, really)
+[x]NGC4424     NO (weird; buckling??)
+[x]NGC4449     NO
+[x]NGC4450     B/P (ED17)
+[x]NGC4487     NO (ED17)
+[x]NGC4498     B/P? (skinny bar)
+[-]NGC4504     B/P?
+# major- and minor-axis profiles indistinguishable
+[-]NGC4517A    NO -- weak, dubious bar
+#	profiles are identical on one side
+[x]NGC4525     NO
+[x]NGC4532     NO
+[x]NGC4559     NO (ED17)
+[x]NGC4579     B/P
+[x]NGC4618     NO (off-center!)
+[-]NGC4630     NO -- not barred
+[x]NGC4639     B/P
+[x]NGC4654     NO (ED17)
+[x]NGC4668     NO
+[x]NGC4713     NO (small)
+[x]NGC4725     B/P (ED17)
+[x]NGC4765     NO (sort of banana-shaped?)
+[x]NGC4781     NO (ED17)
+[-]NGC4980     NO (off-center!)
+# major- and minor-axis profiles indistinguishable
+[x]NGC4981     B/P (almost-centered spurs)
+[x]NGC5042     NO -- weak, dubious bar
+[x]NGC5569     NO
+[-]NGC5608     NO -- no clear bar
+[x]NGC5669     NO (ED17)
+[-]NGC5866B    NO -- not barred
+[-]NGC6207     NO
+#	minor-axis profile is > major-axis profile on one side
+[x]NGC6237     NO
+[x]NGC7418     NO (ED17)
+[x]NGC7513     B/P (ED17)
+[x]NGC7531     B/P (ED17)
+[x]NGC7582     B/P (ED17)
+[x]NGC7764     NO
+[x]NGC7800     NO (banana-shaped?)
+[x]PGC002492   NO (small)
+[x]PGC007654   NO
+[-]PGC011744   NO (may not be barred)
+# major- and minor-axis profiles indistinguishable
+[x]PGC013821   NO (banana-shaped)
+[x]PGC035705   NO
+[x]PGC042160   NO
+[-]PGC045195   NO (off-center) -- very dubious/unclear bar
+[x]PGC051523   NO (off-center)
+[-]PGC069224   NO -- no clear bar
+[-]UGC00017    NO -- not barred
+[-]UGC01670    NO -- not barred
+[x]UGC02345    NO
+[x]UGC04393    NO
+[x]UGC04499    NO (note: bar is a bit trapezoidal, but no spurs)
+[x]UGC04988    NO
+[-]UGC05114    NO -- no clear bar (patchy SF)
+[x]UGC05354    NO
+[x]UGC05393    NO
+[x]UGC05633    NO (skinny bar)
+[-]UGC05740    NO -- no clear bar
+[-]UGC05829    NO -- no clear bar (patchy SF)
+[-]UGC06014    NO -- very dubious bar
+# major- and minor-axis profiles indistinguishable
+[-]UGC06782    NO -- not barred
+[x]UGC06840    NO
+[-]UGC06900    NO -- no clear bar (patchy SF)
+[-]UGC06917    NO -- messed up by bright star and saturation lines
+[x]UGC06931    NO
+[-]UGC06956    NO
+# major- and minor-axis profiles indistinguishable
+[-]UGC06978    NO
+#	minor-axis profile is > major-axis profile on one side
+[x]UGC06983    NO (SF in bar)
+[x]UGC07129    NO
+[-]UGC07175    NO (off-center?)
+#	minor-axis profile is > major-axis profile on one side
+[x]UGC07257    NO
+[-]UGC07534    NO -- no clear bar
+[x]UGC07612    NO
+[-]UGC07690    NO -- no clear bar (off-center)
+#	minor-axis profile is > major-axis profile on one side
+[-]UGC07824    NO
+# major- and minor-axis profiles indistinguishable
+[-]UGC07906    NO -- no clear bar
+[x]UGC07911    NO
+[-]UGC08053    NO -- no clear bar
+[x]UGC08385    NO (bent/banana shape?)
+[x]UGC08489    NO (somewhat bent bar)
+[x]UGC08507    NO
+[-]UGC08614    (v. bright star near galaxy center)
+[-]UGC08688    NO -- bright star near galaxy center along bar minor axis
+[x]UGC08851    NO
+[x]UGC09245    NO
+[-]UGC09274    NO -- no clear bar
+[-]UGC10310    NO -- no clear bar (patchy SF)
+[-]UGC11782    (highly inclined)
+[x]UGC12151    NO
+[-]UGC12682    NO
+#	minor-axis profile is > major-axis profile everywhere!
+[-]UGC12732    NO
+#	profiles are identical on one side
+[-]UGC12843    (v. bright star near galaxy center)
