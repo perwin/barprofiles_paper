@@ -2,6 +2,9 @@
 
 # *** B/P Morphologies
 
+import numpy as np
+
+
 bpMorphologyFile = "./data/s4gbars_bp-buckling_profiles_checklist.dat"
 
 def GetGalaxyNamesAndDict_morphology( filename=bpMorphologyFile ):
@@ -93,6 +96,46 @@ def GetClassifications( classif_filename, descrambling_filename=scrambleMap, cla
             if classif != "?":
                 classifDict[gname] = classif.rstrip("?")
     return classifDict
+
+
+def GetValuesAndIndices( classifDict, valuesDict ):
+    """
+    Returns lists of indices into vectors of possible values.
+    First list is for galaxies with BP profiles, second is for galaxies
+    with different profiles.
+    
+    Parameters
+    ----------
+    classifDict : dict mapping str: str
+        galaxy_name: profile classification
+    
+    valuesDict : dict mapping str: float
+        galaxy_name: parameter value (stellar mass, Hubble type, etc.)
+    
+    Returns
+    -------
+    values, i_bp, i_non_bp : tuple of (1D ndarray of float, list of int, list of int)
+        values = array of galaxy values
+        i_bp = list of indices into values, for galaxies with BP-profiles
+        i_non_bp = list of indices into values, for galaxies without BP-profiles
+    """
+
+    values = []
+    ii_bp = []
+    ii_nonbp = []
+    i = 0
+    
+    # go through first user-supplied data set
+    for gname,classif in classifDict.items():
+        classif = classif.rstrip("?")
+        values.append(valuesDict[gname])
+        if classif == 'BP':
+            ii_bp.append(i)
+        else:
+            ii_nonbp.append(i)
+        i += 1
+    
+    return (np.array(values), ii_bp, ii_nonbp)
 
 
 def MakeValuesDict( classifDict, mainValuesDict, faceon_names ):
