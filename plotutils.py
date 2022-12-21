@@ -9,6 +9,53 @@ from matplotlib.patches import Ellipse
 from skimage.measure import profile_line
 
 
+def Binomial( n, n_tot, nsigma=1.0, conf_level=None, method="wilson" ):
+	"""Computes fraction (aka frequency or rate) of occurances p = (n/n_tot).
+	Also computes the lower and upper confidence limits using either the 
+	Wilson (1927) or Agresti & Coull (1998) method (method="wilson" or method="agresti");
+	default is to use Wilson method.
+	Default is to calculate 68.26895% confidence limits (i.e., 1-sigma in the
+	Gaussian approximation).
+	
+	Returns tuple of (p, sigma_minus, sigma_plus).
+	"""
+	
+	p = (1.0 * n) / n_tot
+	q = 1.0 - p
+	
+	if (conf_level is not None):
+		print("Alternate values of nsigma or conf_limit not yet supported!")
+		alpha = 1.0 - conf_level
+		# R code would be the following:
+		#z_alpha = qnorm(1.0 - alpha/2.0)
+		return None
+	else:
+		z_alpha = nsigma   # e.g., z_alpha = nsigma = 1.0 for 68.26895% conf. limits
+	
+	if (method == "wald"):
+		# Wald (aka asymptotic) method -- don't use except for testing purposes!
+		sigma_minus = sigma_plus = z_alpha * np.sqrt(p*q/n_tot)
+	else:
+		z_alpha2 = z_alpha**2
+		n_tot_mod = n_tot + z_alpha2
+		p_mod = (n + 0.5*z_alpha2) / n_tot_mod
+		if (method == "wilson"):
+			# Wilson (1927) method
+			sigma_mod = np.sqrt(z_alpha2 * n_tot * (p*q + z_alpha2/(4.0*n_tot))) / n_tot_mod
+		elif (method == "agresti"):
+			# Agresti=Coull method
+			sigma_mod = np.sqrt(z_alpha2 * p_mod * (1.0 - p_mod) / n_tot_mod)
+		else:
+			print("ERROR: method \"%s\" not implemented in Binomial!" % method)
+			return None
+		p_upper = p_mod + sigma_mod
+		p_lower = p_mod - sigma_mod
+		sigma_minus = p - p_lower
+		sigma_plus = p_upper - p
+	
+	return (p, sigma_minus, sigma_plus)
+
+
 
 # Nicer-looking logarithmic axis labeling
 
@@ -691,6 +738,36 @@ def ExtractProfile( imdata, x0,y0, x1,y1, width=1 ):
     return rr,ii
 
 
+def DrawArrow( startCoord, endCoord=None, PA=None, radius=None, lineWidth=1, headWidth=8,
+                headLength=1.6, color="black", text="", alt=True ):
+    """Draw an arrow from startCoords to endCoord (both should be 2-element
+    tuples or lists of (x,y)), with lineWidth and headWidth in points (latter
+    is width of arrowhead *base*).  headLength specifies the length of the
+    arrowhead as a multiple of headWidth (only applies if alt == True).
+    text is optional text which will appear at the base of the arrow.
+
+    By setting endCoord = None and using PA and radius instead, the arrow can be
+    drawn from startCoord in the direction specified by PA (angle CCW from +y axis),
+    with distance = radius
+    """
+
+    arrowProperties = dict(width=lineWidth, headwidth=headWidth, color=color)
+    if endCoord is None:
+        xc,yc = startCoord
+        dx = -radius * math.sin(math.radians(PA))
+        dy = radius * math.cos(math.radians(PA))
+        endCoord = (xc + dx, yc + dy)
+    if alt is True:
+        x0,y0 = startCoord
+        plt.arrow(x0,y0, dx,dy, color=color, width=lineWidth, head_width=headWidth,
+                    head_length=headLength*headWidth, length_includes_head=True, overhang=0.3)
+    else:
+        plt.annotate(text, xy=endCoord, xycoords="data", xytext=startCoord,
+                    arrowprops=arrowProperties, color=color)
+
+    return None
+
+
 def GetProfileAtAngle( imdata, xc,yc, angle, radius, width=1 ):
     """
     Returns a 1D profile cut through an image at specified angle, extending to
@@ -734,3 +811,61 @@ def GetProfileAtAngle( imdata, xc,yc, angle, radius, width=1 ):
     rr,ii = ExtractProfile(imdata, x_start,y_start, x_end,y_end, width=width)
     rr = rr - radius
     return rr, ii
+
+
+def PlotFrequency( values, i_1, i_non1, start, stop, step, offset=0, noErase=False, 
+					axisObj=None, debug=False, **kwargs ):
+					
+	"""
+	Plots frequencies with binomial 68% confidence intervals (as error bars) in
+	bins of values, where i_1 are indices defining detections and i_non1 define
+	non-detections.
+
+	values = vector of values (e.g., M_star)
+	i1 = list of indices into values for objects in parent sample 
+		and in group 1 (e.g., barred galaxies)
+	i_non1 = list of indices into values for objects in parent sample 
+		but *not* in group 1 (e.g., unbarred galaxies)
+	start, stop, step = start, stop, and spacing for bins
+	
+	offset = optional additive offset to x [values] positions of plotted points
+	
+	axisObj = optional matplotlib Axes object where plot will be placed
+	
+	**kwargs = extra keyword=value pairs passed to plt.errorbar
+
+	Example:
+	PlotFrequency(logMstar, ii_boxy, ii_nonboxy, 9.0, 11.6, 0.2)
+	"""
+	binranges = np.arange(start, stop, step)
+	n1,bins = np.histogram(np.array(values)[i_1], bins=binranges)
+	n2,bins = np.histogram(np.array(values)[i_non1], bins=binranges)
+	nBins = len(n1)
+
+	ff = []
+	ff_low = []
+	ff_high = []
+	for i in range(nBins):
+		if n1[i] + n2[i] == 0:
+			f = f_low = f_high = np.nan
+		else:
+			f,f_low,f_high = Binomial(n1[i], n1[i] + n2[i])
+		ff.append(f)
+		ff_low.append(f_low)
+		ff_high.append(f_high)
+	x = np.array([0.5*(bins[i] + bins[i + 1]) for i in range(len(bins) - 1)])
+	if debug:
+		print(bins)
+		print("n1 (i_1) = ", n1)
+		print("n2 (i_non1) = ", n2)
+		print(ff)
+	
+	if noErase is False:
+		plt.clf()
+	if axisObj is None:
+		plt.errorbar(x + offset, ff, [ff_low,ff_high], None, elinewidth=1.2, 
+					capthick=1.2, capsize=5, **kwargs)
+	else:
+		axisObj.errorbar(x + offset, ff, [ff_low,ff_high], None, elinewidth=1.2, 
+					capthick=1.2, capsize=5, **kwargs)
+
