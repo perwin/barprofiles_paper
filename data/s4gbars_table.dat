@@ -1,6 +1,5 @@
 # This table summarizes useful information about galaxies in the Parent Disc Sample of
-# Erwin (2018), as updated in 2022 for use in the bar-profiles paper of Erwin,
-# Debattista, & Anderson (2023).
+# Erwin (2018).
 #
 # Except for the following columns, values are from Herrera-Endoqui et al. (2015: A&A, 582, A86)
 #    dist, logmstar -- distance in Mpc and log of galaxy stellar mass (in solar masses), from 
@@ -8,14 +7,14 @@
 #    bar_strength -- Buta et al. (2015, ApJS, 217, 32)
 #    A2, A4 -- Diaz-Garcia et al. (2016a, 587, A160)
 #    Re, Re_kpc, h_kpc -- Salo et al. (2015, ApJS, 219, 4)
-#    R25, etc.; t_s4g -- main S4G table (spitzer.s4gcat22704.tbl, retrieved from IPAC Infrared Science Archive (IRSA), Caltech/JPL)
+#    R25, etc.; t_s4g -- main S4G table
 #    B_tc, BmV_tc, m21c, W_gas, t_leda -- HyperLeda (as of 29 March 2017)
-#        NGC4314: m21c is from HI flux in ALFALFA (Springob et al. 2005, ApJS, 130, 2598)
-#    gmr_tc -- total g-r color, based on BmV_tc as described in Erwin (2018)
+#        NGC4314: m21c is from HI flux in Springob+2005 (ApJS)
+#    gmr_tc -- total g-r color, based on BmV_tc as described in paper
 #    gmr_sga_tc -- total g-r color from Siena Galaxy Atlas
-#    weight_BmVtc -- B_t-based weights for galaxy colors (see Erwin 2018)
+#    weight_BmVtc -- B_t-based weights for galaxy colors (see paper)
 #    w25, w30, w40 -- V/V_max weights assuming D_max = 25, 30, or 40 Mpc
-#    M_HI, logfgas -- based on dist + m21c, as described in Erwin (2018)
+#    M_HI, logfgas -- based on dist + m21c, as described in paper
 #    inclination -- Munoz-Mateos et al. (2015)
 #    sma_dp_kpc2 -- deprojected bar semi-major axis (in kpc) using bar size and
 #       PA from Herrera-Endoqui et al. and galaxy inclination and PA from Munoz-Mateos et al.
