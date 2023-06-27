@@ -4,7 +4,7 @@ This git repository contains data files, Python code, and Python and R
 Jupyter notebooks which can be used to reproduce figures and analyses
 from the paper "The Profiles of Bars in Barred Galaxies" (Erwin,
 Debattista, & Anderson 2023, *Monthly Notices of the Royal Astronomical
-Society*, submitted).
+Society*, in press).
 
 
 ![Trends](./composite_fig_for_github_logistic-fits.png)
