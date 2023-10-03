@@ -10,9 +10,9 @@
 #       Flat-top = roughly constant central SB, exponential falloff
 #       Flat-top(N)
 #       Two-slope = outer steep exponential, inner shallow exponential
-#       BP = classic EE85 "flat" profile associated with B/P bulges
+#       BP = classic EE85 "flat" profile associated with B/P bulges ["P+Sh" in paper]
 #
-#    Outer_slope = approximate slope of profile outside the bar, realtive
+#    Outer_slope = approximate slope of profile outside the bar, relative
 #    to the profile inside (closest to bar end if multiple slopes in bar)
 #    Suggested types:
 #       steeper, same, shallower
@@ -205,3 +205,4 @@
 178 Exp(N) steeper			asymmetric
 179 Exp	   shallower
 180 Exp	   steeper
+181 BP	   shallower

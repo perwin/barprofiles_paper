@@ -21,8 +21,8 @@ for barred spirals, versus galaxy stellar mass.
 
 The full set of *Spitzer* 3.6-micron images for the sample galaxies can be found
 at, e.g., the [NASA Extragalactic Database](https://ned.ipac.caltech.edu); to
-make it easier to reproduce the figures in the paper, we include sky-subtracted
-versions of these images for xxx of the galaxies.
+make it easier to reproduce Figure 1 of the paper, we include sky-subtracted
+versions of these images for three of the galaxies in the `data/images` folder.
 
 
 ## Dependencies

@@ -1,5 +1,8 @@
 # List of galaxies in S4G barred-spirals Sample 1 (D < 25 Mpc) from Erwin 2018 
-# S4G-bar-fractions paper, subsetted to inclination i = 40--70 and bar deltaPA_dp <= 60
+# S4G-bar-fractions paper, subsetted to inclination i = 40--70 and bar deltaPA_dp <= 60.
+#
+# Second column indicates whether bar has boxy/peanut-shaped bulge (B/P), none (NO),
+# or is possibly buckling
 #
 # [x] = galaxy analyzed
 #
@@ -87,6 +90,7 @@
 [x]NGC4498     B/P? (skinny bar)
 [x]NGC4525     NO
 [x]NGC4532     NO
+[x]NGC4535     B/P (ED13)
 [x]NGC4559     NO (ED17)
 [x]NGC4579     B/P
 [x]NGC4618     NO (off-center!)
